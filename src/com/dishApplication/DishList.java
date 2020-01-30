@@ -24,6 +24,7 @@ public class DishList {
     }
 
     // Deletes dish by first occurrence of matching name
+    // Returns true if dish deleted and false if not found
     public boolean deleteDish(String name) {
         for (Dish d : dishes) {
             if (d.getName().equals(name)) {
