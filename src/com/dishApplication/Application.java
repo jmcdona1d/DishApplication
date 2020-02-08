@@ -11,7 +11,7 @@ public class Application {
         System.out.println("\nWelcome to the Dish Tracker 3000! \n");
 
         while (true) {
-            System.out.println("Type a command: 'Add', 'Delete', 'View', 'Exit'");
+            System.out.println("Type a command: ('Add', 'Delete', 'View', 'Exit')");
             String input = cli.nextLine();
 
             switch (input) {
@@ -49,9 +49,9 @@ public class Application {
     // Method used to load test data to save initialization time while demoing
     private static DishList loadTestData() {
         DishList dishes = new DishList();
-        dishes.addDish(new Dish("Fried Chicken"));
-        dishes.addDish(new Dish("Sushi"));
+        dishes.addDish(new Dish("Peameal Bacon Sandwich"));
         dishes.addDish(new Dish("Poutine"));
+        dishes.addDish(new Dish("Butter Tart"));
         return dishes;
     }
 }

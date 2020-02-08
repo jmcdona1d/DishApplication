@@ -1,37 +1,34 @@
 package com.dishApplication;
 
-import java.util.ArrayList;
+import java.util.HashMap;
+import static java.util.Objects.isNull;
 
 //List of dishes class
 public class DishList {
 
-    private ArrayList<Dish> dishes;
+    //Dishes mapped by their name for O(1) access
+    private HashMap<String, Dish> dishes;
 
     public DishList() {
-        dishes = new ArrayList<>();
+        dishes = new HashMap<>();
     }
 
     public void addDish(Dish dish) {
-        dishes.add(dish);
+        dishes.put(dish.getName(), dish);
     }
 
     public void viewDishes() {
         System.out.println("---------------");
-        for (Dish d : dishes) {
+        for (Dish d : dishes.values()) {
             System.out.println(d.getName());
         }
         System.out.println("---------------");
     }
 
-    //Deletes dish by first occurrence of matching name
-    //Returns true if dish deleted and false if not found
+    //Removes dish from HashMap - return true on success
+    //If no dish is removed - return false
     public boolean deleteDish(String name) {
-        for (Dish d : dishes) {
-            if (d.getName().equals(name)) {
-                dishes.remove(d);
-                return true;
-            }
-        }
-        return false;
+        Dish removed = dishes.remove(name);
+        return !isNull(removed);
     }
 }
