@@ -1,6 +1,6 @@
 package com.dishApplication;
 
-//Dish Object
+//Dish class
 public class Dish {
 
     private String name;
@@ -11,9 +11,5 @@ public class Dish {
 
     public String getName() {
         return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
     }
 }

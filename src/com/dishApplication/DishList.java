@@ -2,7 +2,7 @@ package com.dishApplication;
 
 import java.util.ArrayList;
 
-//List of dishes object
+//List of dishes class
 public class DishList {
 
     private ArrayList<Dish> dishes;
@@ -23,8 +23,8 @@ public class DishList {
         System.out.println("---------------");
     }
 
-    // Deletes dish by first occurrence of matching name
-    // Returns true if dish deleted and false if not found
+    //Deletes dish by first occurrence of matching name
+    //Returns true if dish deleted and false if not found
     public boolean deleteDish(String name) {
         for (Dish d : dishes) {
             if (d.getName().equals(name)) {

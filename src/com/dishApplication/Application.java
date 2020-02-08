@@ -8,48 +8,40 @@ public class Application {
 
         Scanner cli = new Scanner(System.in);
         DishList dishes = loadTestData();
-        skipLine();
-        System.out.println("Welcome to the Dish Tracker 3000!");
-        skipLine();
+        System.out.println("\nWelcome to the Dish Tracker 3000! \n");
 
         while (true) {
             System.out.println("Type a command: 'Add', 'Delete', 'View', 'Exit'");
             String input = cli.nextLine();
-            skipLine();
 
             switch (input) {
 
             case "Add":
-                System.out.println("Enter name of the new dish:");
+                System.out.println("\nEnter name of the new dish:");
                 String nameAdd = cli.nextLine();
-                skipLine();
                 dishes.addDish(new Dish(nameAdd));
-                System.out.println("Added dish with Name: " + nameAdd);
-                skipLine();
+                System.out.println("\nAdded dish with Name: " + nameAdd +"\n");
                 break;
 
             case "Delete":
-                System.out.println("Enter name of the dish to delete");
+                System.out.println("\nEnter name of the dish to delete");
                 String nameDelete = cli.nextLine();
-                skipLine();
                 System.out.println(
-                        dishes.deleteDish(nameDelete) ? "Deleted " + nameDelete : "Unable to find " + nameDelete);
-                skipLine();
+                        dishes.deleteDish(nameDelete) ? "\nDeleted " + nameDelete +"\n" : "\nUnable to find " + nameDelete +"\n");
                 break;
 
             case "View":
-                System.out.println("Displaying all saved dishes:");
+                System.out.println("\nDisplaying all saved dishes:");
                 dishes.viewDishes();
-                skipLine();
+                System.out.print("\n");
                 break;
 
             case "Exit":
-                System.out.println("Closing Program");
+                System.out.println("\nClosing Program");
                 return;
 
             default:
-                System.out.println("Command unknown - please enter a command from the provided list");
-                skipLine();
+                System.out.println("\nCommand unknown - please enter a command from the provided list\n");
             }
         }
     }
@@ -61,10 +53,5 @@ public class Application {
         dishes.addDish(new Dish("Sushi"));
         dishes.addDish(new Dish("Poutine"));
         return dishes;
-    }
-
-    // Looks cleaner to write method name then have blank printlns everywhere
-    private static void skipLine() {
-        System.out.println("");
     }
 }
