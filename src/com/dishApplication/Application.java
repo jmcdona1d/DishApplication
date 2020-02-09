@@ -8,10 +8,10 @@ public class Application {
 
         Scanner cli = new Scanner(System.in);
         DishList dishes = loadTestData();
-        System.out.println("\nWelcome to the Dish Tracker 3000! \n");
+        System.out.println("\nWelcome to the Dish Tracker 3000!");
 
         while (true) {
-            System.out.println("Type a command: ('Add', 'Delete', 'View', 'Exit')");
+            System.out.println("\nType a command: ('Add', 'Delete', 'View', 'Exit')");
             String input = cli.nextLine();
 
             switch (input) {
@@ -20,20 +20,19 @@ public class Application {
                 System.out.println("\nEnter name of the new dish:");
                 String nameAdd = cli.nextLine();
                 dishes.addDish(new Dish(nameAdd));
-                System.out.println("\nAdded dish with Name: " + nameAdd +"\n");
+                System.out.println("\nAdded dish with Name: " + nameAdd);
                 break;
 
             case "Delete":
                 System.out.println("\nEnter name of the dish to delete");
                 String nameDelete = cli.nextLine();
                 System.out.println(
-                        dishes.deleteDish(nameDelete) ? "\nDeleted " + nameDelete +"\n" : "\nUnable to find " + nameDelete +"\n");
+                        dishes.deleteDish(nameDelete) ? "\nDeleted " + nameDelete +"\n" : "\nUnable to find " + nameDelete);
                 break;
 
             case "View":
                 System.out.println("\nDisplaying all saved dishes:");
                 dishes.viewDishes();
-                System.out.print("\n");
                 break;
 
             case "Exit":
@@ -41,7 +40,7 @@ public class Application {
                 return;
 
             default:
-                System.out.println("\nCommand unknown - please enter a command from the provided list\n");
+                System.out.println("\nCommand unknown - please enter a command from the provided list");
             }
         }
     }
