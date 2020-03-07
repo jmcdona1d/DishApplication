@@ -1,9 +1,8 @@
 # DishApplication
-Java App for PagerDuty Interview
 
 Original task: allow add dish names, delete them and view a list of them
 
-Interview Problems:
+Additional tasks:
 
 1. Add a list of ingredients to each meal (required) (and display it)
 2. Allow input of ingredients user has to return a list of dishes they could make
